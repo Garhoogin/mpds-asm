@@ -23,6 +23,7 @@ CTRDGi_UnlockByProcessor = 0x0207B868;
 DC_FlushAll = 0x02063FA8;
 DC_FlushRange = 0x02064014;
 DC_InvalidateRange = 0x02063FDC;
+DC_StoreRange = 0x02063FF8;
 
 DGT_Hash2CalcHmac = 0x02069EC4;
 DGT_SetOverlayTableMode = 0x02069A80;
@@ -79,6 +80,10 @@ IC_InvalidateRange = 0x02064050;
 
 INITi_CpuClear32 = 0x0200093C;
 
+MB_Init = 0x02078B38;
+MBi_ChildStartMP = 0x0207AA98;
+MBi_GetBeaconPeriodDispersion = 0x02078AD0;
+
 MI_Copy36B = 0x02065C10;
 MI_CpuCopy8 = 0x02065D10;
 MI_CpuCopy32 = 0x02065B58;
@@ -98,6 +103,7 @@ MI_UncompressRL8 = 0x0206608C;
 MI_UnfilterDiff8 = 0x020660F8;
 MI_WaitDma = 0x02065954;
 MIi_CheckDma0SourceAddress = 0x02065ABC;
+MIi_CpuClear16 = 0x02065B10;
 MIi_CpuClear32 = 0x02065B44;
 MIi_CpuClearFast = 0x02065B70;
 MIi_DmaSetParams = 0x01FFD084;
@@ -121,6 +127,7 @@ OS_GetConsoleType = 0x02063B6C;
 OS_GetInitArenaHi = 0x0206426C;
 OS_GetInitArenaLo = 0x02064350;
 OS_GetLockID = 0x020626B8;
+OS_GetMacAddress = 0x0206544C;
 OS_GetProcMode = 0x020652E8;
 OS_Halt = 0x02065680;
 OS_Init = 0x0206408C;
@@ -143,6 +150,7 @@ OS_RestoreInterrupts = 0x02065298;
 OS_RestoreInterrupts_IrqAndFiq = 0x020652C4;
 OS_SaveContext = 0x02063AD4;
 OS_SelectThread = 0x020637E8;
+OS_SendMessage = 0x02063BAC;
 OS_SetArenaLo = 0x0206440C;
 OS_SetArenaHi = 0x020643F8;
 OS_SetIrqFunction = 0x020620FC;
@@ -188,6 +196,13 @@ PXI_SendWordByFifo = 0x02067498;
 PXI_SetFifoRecvCallback = 0x02067428;
 PXIi_HandlerRecvFifoNotEmpty = 0x02067520;
 
+RtcCommonCallback = 0x0206BF08;
+RtcWaitBusy = 0x0206C4D8;
+RTC_GetTime = 0x0206BED0;
+RTC_GetTimeAsync = 0x0206BE5C;
+RTC_Init = 0x0206BD48;
+RTCi_ReadRawTimeAsync = 0x0206C500;
+
 STD_GetStringLength = 0x0207BFE4;
 STD_CompareString = 0x0207C018;
 STD_CopyString = 0x0207BFB0;
@@ -195,11 +210,29 @@ STD_CopyString = 0x0207BFB0;
 SVC_CpuClear = 0x02000080;
 SVC_WaitByLoop = 0x02000224;
 
+WM_GetAID = 0x02070130;
+WM_GetConnectedAIDs = 0x02070160;
+WM_GetMPReceiveBufferSize = 0x020703AC;
+WM_GetMPSendBufferSize = 0x02070340;
+WM_GetNextTgid = 0x02070728;
+WM_SetPortCallback = 0x0207021C;
+WM_StartMPEx = 0x02070E88;
+WM_StartScan = 0x02070A48;
+WMi_CheckInitialized = 0x0206FC70;
+WMi_CheckStateEx = 0x0206FCD4;
+WMi_GetSystemWork = 0x0206FC60;
+WMi_SendCommandDirect = 0x0206FBF0;
+WMi_SetCallbackTable = 0x0206FAD4;
+WMi_StartMP = 0x02070D28;
+ChildStateOutStartMP = 0x0207ABA8;
+WmGetCommandBuffer4Arm7 = 0x0206FAEC;
+
 __call_static_initializers = 0x02083290;
 _fp_init = 0x020831C8;
 _start = 0x02000800;
 do_autoload = 0x020009FC;
 init_cp15 = 0x02000A78;
+resetBankForX_ = 0x020602FC;
 
 
 arc_decompressFileByIndex = 0x02033080;
@@ -224,6 +257,7 @@ hbdf_loadMdlf = 0x0200D7F8;
 hbdf_mdlfLoadObjo = 0x0200D5C0;
 hbdf_mdlfLoadStrb = 0x0200D780;
 hbdf_mdlfLoadTexs = 0x0200C908;
+hbdf_texsInitTextureInfo = 0x02015054;
 hbdf_texsReadImgo = 0x0200C4C4;
 hbdf_texsReadPlto = 0x0200C79C;
 hbdf_texsReadTexo = 0x0200C440;
@@ -248,3 +282,5 @@ mm_free = 0x02018380;
 mm_free2 = 0x02011F18;
 mm_freei = 0x020182EC;
 mm_zero = 0x0201884C;
+
+sys_insertLinkedList = 0x0200E6B4;
